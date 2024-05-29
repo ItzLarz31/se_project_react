@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  max-height: 40px;
+  align-items: center;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  margin-top: 32px;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+}
+
+.header__user-container {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 24px;
+  max-width: 89px;
+  max-height: 40px;
+}
+
+.header__date {
+  font-size: 20px;
+  text-wrap: nowrap;
+  margin: 0;
+}
+
+.header__add-button {
+  font-size: 20px;
+  width: 116px;
+  border-style: hidden;
+  background: none;
+  padding: 0;
+  margin: 0;
+  margin-right: 20px;
+  text-wrap: nowrap;
+}
+
+.header__user-info {
+  font-size: 20px;
+  line-height: 25px;
+  margin-right: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header__user-pic {
+  max-height: 40px;
+  max-width: 40px;
+}
