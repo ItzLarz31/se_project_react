@@ -40,6 +40,7 @@
   margin: 0;
   margin-right: 20px;
   text-wrap: nowrap;
+  cursor: pointer;
 }
 
 .header__user-info {
@@ -50,7 +51,14 @@
   margin-bottom: 0;
 }
 
-.header__user-pic {
+.header__avatar {
   max-height: 40px;
   max-width: 40px;
+}
+
+.header__user-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
 }
