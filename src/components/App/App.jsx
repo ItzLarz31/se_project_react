@@ -9,7 +9,7 @@ import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
 import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
-import { CurrentTempUnitContext } from "../contexts/CurrentTempUnitContext";
+import { CurrentTempUnitContext } from "../../utils/contexts/CurrentTempUnitContext.jsx";
 import { getItems, pushItems, deleteItems } from "../../utils/api.js";
 
 function App() {
