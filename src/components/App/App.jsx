@@ -7,7 +7,7 @@ import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-// import AddItemModal from "../AddItemModal/AddItemModal.jsx";
+import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
 import { CurrentTempUnitContext } from "../../utils/contexts/CurrentTempUnitContext.jsx";

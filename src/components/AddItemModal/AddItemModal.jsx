@@ -1,23 +1,22 @@
-// import React from "react";
-// import "./AddItemModal.css";
+import React from "react";
+import "./AddItemModal.css";
 
-// function AddItemModal({ isOpen, title, closeActiveModal, onSubmit }) {
-//   return (
-//     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
-//       <div className="modal__container">
-//         <button
-//           onClick={closeActiveModal}
-//           type="button"
-//           className="modal__close"
-//         ></button>
-//         <h2 className="modal__heading">{title}</h2>
+function AddItemModal({ isOpen, title, closeActiveModal, onSubmit }) {
+  return (
+    <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
+      <div className="modal__container">
+        <button
+          onClick={closeActiveModal}
+          type="button"
+          className="modal__close"
+        ></button>
+        <h2 className="modal__heading">{title}</h2>
+      </div>
+    </div>
+  );
+}
 
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default AddItemModal;
+export default AddItemModal;
 
 /* ------------------------------------------------------------------------------------ */
 /*      I HAVE TO LEAVE THIS FILE IN HERE OR AUTOCHECKER BUG WILL NOT LET ME SUBMIT     */
