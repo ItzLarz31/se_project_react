@@ -125,12 +125,6 @@
       "weather": "Warm",
       "imageUrl": "https://m.media-amazon.com/images/I/51L262N+xKS._AC_SY550_.jpg",
       "_id": 20
-    },
-    {
-      "name": "Thin Jacket 2",
-      "weather": "Warm",
-      "imageUrl": "https://m.media-amazon.com/images/I/51L262N+xKS._AC_SY550_.jpg",
-      "_id": 21
     }
   ]
 }
