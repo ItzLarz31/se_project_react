@@ -8,6 +8,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
+import ConfirmationModal from "../../ConfirmationModal/ConfirmationModal.jsx";
 import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
 import { CurrentTempUnitContext } from "../../utils/contexts/CurrentTempUnitContext.jsx";
@@ -23,6 +24,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -44,32 +46,36 @@ function App() {
     setCurrentTempUnit(isChecked ? "C" : "F");
   };
 
-  const handleAddItem = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.elements.title.value;
-    const imageUrl = form.elements.url.value;
-    const weather = form.elements.weather.value;
+  const handleAddItem = (formData, resetForm) => {
+    setIsLoading(true);
+    const { title, url, weather } = formData;
 
-    pushItems(name, weather, imageUrl)
+    pushItems(title, weather, url)
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         closeActiveModal();
+        resetForm();
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const handleDeleteItem = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const id = selectedCard._id;
     deleteItems(id)
       .then(() => {
         const updatedItems = clothingItems.filter((item) => item._id !== id);
         setClothingItems(updatedItems);
+        closeActiveModal();
       })
-      .catch(console.error);
-
-    closeActiveModal();
+      .catch(console.error)
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -127,6 +133,7 @@ function App() {
           title={"New garment"}
           closeActiveModal={closeActiveModal}
           onSubmit={handleAddItem}
+          isLoading={isLoading}
         />
         <ItemModal
           closeActiveModal={closeActiveModal}
@@ -134,31 +141,12 @@ function App() {
           card={selectedCard}
           onClick={handelDeleteClick}
         />
-        <ModalWithForm
-          closeActiveModal={closeActiveModal}
+        <ConfirmationModal
           isOpen={activeModal === "delete"}
-        >
-          <p className="modal__text">
-            Are you sure you want to delete this item?
-            <br />
-            This action is irreversible.
-          </p>
-
-          <button
-            onClick={handleDeleteItem}
-            type="submit"
-            className="modal__confirm-delete-btn"
-          >
-            Yes, delete item
-          </button>
-          <button
-            onClick={closeActiveModal}
-            type="button"
-            className="modal__cancel-btn"
-          >
-            Cancel
-          </button>
-        </ModalWithForm>
+          closeActiveModal={closeActiveModal}
+          onSubmit={handleDeleteItem}
+          isLoading={isLoading}
+        />
       </CurrentTempUnitContext.Provider>
     </div>
   );

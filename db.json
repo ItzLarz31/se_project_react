@@ -103,28 +103,10 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "Crocs",
-      "weather": "Hot",
-      "imageUrl": "https://images.dsw.com/is/image/DSWShoes/342264_112_ss_01?impolicy=qlt-medium-high&imwidth=640&imdensity=1",
-      "_id": 17
-    },
-    {
-      "name": "Jersey",
-      "weather": "Hot",
-      "imageUrl": "https://ultracornhole.b-cdn.net/wp-content/uploads/2022/05/JerseyFrontF.png",
-      "_id": 18
-    },
-    {
-      "name": "fluffy jacket",
+      "name": "Test Jacket",
       "weather": "Cold",
-      "imageUrl": "https://m.media-amazon.com/images/I/51u2fyAMMQL._AC_UY1000_.jpg",
-      "_id": 19
-    },
-    {
-      "name": "Thin Jacket",
-      "weather": "Warm",
-      "imageUrl": "https://m.media-amazon.com/images/I/51L262N+xKS._AC_SY550_.jpg",
-      "_id": 20
+      "imageUrl": "https://m.media-amazon.com/images/I/61FRgVZBhzL._AC_UY1000_.jpg",
+      "_id": 17
     }
   ]
 }
