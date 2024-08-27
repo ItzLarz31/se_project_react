@@ -2,7 +2,12 @@ import React from "react";
 import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard.jsx";
 
-function ClothesSection({ handleCardClick, clothingItems, handleAddClick }) {
+function ClothesSection({
+  handleCardClick,
+  clothingItems,
+  handleAddClick,
+  onCardLike,
+}) {
   return (
     <section className="clothes-section">
       <div className="clothes-section__header">
@@ -22,6 +27,7 @@ function ClothesSection({ handleCardClick, clothingItems, handleAddClick }) {
               key={item._id}
               item={item}
               onCardClick={handleCardClick}
+              onCardLike={onCardLike}
             />
           );
         })}

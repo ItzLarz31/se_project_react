@@ -56,9 +56,43 @@
   max-width: 40px;
 }
 
+.header__avatar-placeholder {
+  height: 40px;
+  width: 40px;
+  background-color: #00000033;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header__user-link {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: black;
+}
+
+.header__login-button {
+  font-size: 20px;
+  font-weight: 700;
+  border-style: hidden;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.header__register-button {
+  font-size: 20px;
+  font-weight: 700;
+  border-style: hidden;
+  background: none;
+  padding: 0;
+  margin-right: 20px;
+  cursor: pointer;
 }

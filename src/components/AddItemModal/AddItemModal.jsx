@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./AddItemModal.css";
 
@@ -14,6 +14,8 @@ function AddItemModal({
     url: "",
     weather: "",
   });
+
+  const [isFormComplete, setIsFormComplete] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,6 +34,11 @@ function AddItemModal({
       weather: "",
     });
   };
+
+  useEffect(() => {
+    const { title, url, weather } = formData;
+    setIsFormComplete(title && url && weather);
+  }, [formData]);
 
   return (
     <ModalWithForm
@@ -77,8 +84,8 @@ function AddItemModal({
             type="radio"
             name="weather"
             id="weather-hot"
-            value="Hot"
-            checked={formData.weather === "Hot"}
+            value="hot"
+            checked={formData.weather === "hot"}
             onChange={handleChange}
           />
           Hot
@@ -88,8 +95,8 @@ function AddItemModal({
             type="radio"
             name="weather"
             id="weather-warm"
-            value="Warm"
-            checked={formData.weather === "Warm"}
+            value="warm"
+            checked={formData.weather === "warm"}
             onChange={handleChange}
           />
           Warm
@@ -99,13 +106,18 @@ function AddItemModal({
             type="radio"
             name="weather"
             id="weather-cold"
-            value="Cold"
-            checked={formData.weather === "Cold"}
+            value="cold"
+            checked={formData.weather === "cold"}
             onChange={handleChange}
           />
           Cold
         </label>
-        <button type="submit" className="modal__save modal__save_disabled">
+        <button
+          type="submit"
+          className={`modal__save ${
+            isFormComplete ? "modal__save_active" : "modal__save_disabled"
+          }`}
+        >
           {isLoading ? "Saving..." : "Add Garment"}
         </button>
       </div>

@@ -1,0 +1,26 @@
+.modal__save {
+  margin-top: 32px;
+  width: 124px;
+  height: 36px;
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+  border: transparent;
+  line-height: 21.78px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.modal__save_disabled {
+  background-color: rgb(2, 2, 2);
+  margin-top: 32px;
+  color: white;
+  border: 1px;
+  border-style: solid;
+  opacity: 30%;
+  line-height: 21.78px;
+  border-radius: 4px;
+  width: 124px;
+  height: 36px;
+}

@@ -9,7 +9,40 @@
   margin-right: 16px;
 }
 
+.sidebar__avatar-placeholder {
+  height: 40px;
+  width: 40px;
+  background-color: #00000033;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sidebar__username {
   text-wrap: nowrap;
   font-size: 20px;
+}
+
+.sidebar__list {
+  padding: 0;
+}
+
+.sidebar__item {
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+.sidebar__button {
+  font-size: 20px;
+  font-weight: 700;
+  border-style: hidden;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 }

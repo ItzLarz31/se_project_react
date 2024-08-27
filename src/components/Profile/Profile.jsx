@@ -4,17 +4,28 @@ import userPic from "../../assets/images/user-pic.svg";
 import SideBar from "../SideBar/SideBar";
 import ClothesSection from "../ClothesSection/ClothesSection";
 
-function Profile({ handleCardClick, clothingItems, handleAddClick }) {
+function Profile({
+  handleCardClick,
+  clothingItems,
+  handleAddClick,
+  handleProfileEditClick,
+  handleSignOut,
+  onCardLike,
+}) {
   return (
     <div className="profile">
       <section className="profile__sidebar">
-        <SideBar />
+        <SideBar
+          handleProfileEditClick={handleProfileEditClick}
+          handleSignOut={handleSignOut}
+        />
       </section>
       <section className="profile__clothing-items">
         <ClothesSection
           handleCardClick={handleCardClick}
           clothingItems={clothingItems}
           handleAddClick={handleAddClick}
+          onCardLike={onCardLike}
         />
       </section>
     </div>

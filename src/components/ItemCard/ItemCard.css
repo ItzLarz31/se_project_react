@@ -23,3 +23,14 @@
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
+
+.card__like-button {
+  position: absolute;
+  right: 110px;
+  top: 18px;
+  width: 18px;
+  height: 15px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
