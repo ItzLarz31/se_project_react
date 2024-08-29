@@ -10,7 +10,7 @@ import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
-import ConfirmationModal from "../../ConfirmationModal/ConfirmationModal.jsx";
+import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 import { getWeatherData, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
 import { CurrentTempUnitContext } from "../../utils/contexts/CurrentTempUnitContext.jsx";
@@ -23,7 +23,7 @@ import {
   addCardLike,
   removeCardLike,
 } from "../../utils/api.js";
-import ProtectedRoute from "../../utils/ProtectedRoute.jsx";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 import { register, signIn, checkToken } from "../../utils/auth.js";
 import { setToken, getToken, removeToken } from "../../utils/token.js";
 import CurrentUserContext from "../../utils/contexts/CurrentUserContext.jsx";
@@ -242,7 +242,6 @@ function App() {
               handleLoginClick={handleLoginClick}
               handleRegisterClick={handleRegisterClick}
               isAuth={isAuth}
-              currentUser={currentUser}
             />
             <Routes>
               <Route
@@ -318,7 +317,6 @@ function App() {
             closeActiveModal={closeActiveModal}
             onSubmit={handleEditProfile}
             isLoading={isLoading}
-            currentUser={currentUser}
           />
         </CurrentTempUnitContext.Provider>
       </CurrentUserContext.Provider>

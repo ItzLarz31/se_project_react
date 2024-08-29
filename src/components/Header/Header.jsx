@@ -1,7 +1,9 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import wtwrLogo from "../../assets/images/wtwr-logo.svg";
 import "../Header/Header.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import CurrentUserContext from "../../utils/contexts/CurrentUserContext";
 
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
@@ -14,8 +16,9 @@ function Header({
   handleLoginClick,
   handleRegisterClick,
   isAuth,
-  currentUser,
 }) {
+  const { currentUser } = React.useContext(CurrentUserContext);
+
   const userInitial = currentUser?.name
     ? currentUser.name.charAt(0).toUpperCase()
     : "";

@@ -1,5 +1,5 @@
 import React from "react";
-import ModalWithForm from "../components/ModalWithForm/ModalWithForm";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function ConfirmationModal({ isOpen, closeActiveModal, onSubmit, isLoading }) {
   return (

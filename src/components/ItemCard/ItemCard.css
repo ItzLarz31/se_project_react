@@ -1,20 +1,32 @@
 .card {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .card__name {
-  margin: 0;
-  position: absolute;
-  left: 130px;
-  top: 15px;
-  padding: 2px 12px 2px 12px;
   border-radius: 4px;
-  background-color: white;
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
-  color: rgba(0, 0, 0, 0.5);
+  padding: 2px 12px;
+  background-color: white;
 }
 
 .card__image {
@@ -25,11 +37,7 @@
 }
 
 .card__like-button {
-  position: absolute;
-  right: 110px;
-  top: 18px;
-  width: 18px;
-  height: 15px;
+  margin-left: 8px; /* Space between text and heart icon */
   cursor: pointer;
   border: none;
   background: none;
