@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && scp -r ./dist/* larz9889@35.196.214.214:/home/larz9889/frontend"
   },
   "dependencies": {
     "react": "^18.2.0",

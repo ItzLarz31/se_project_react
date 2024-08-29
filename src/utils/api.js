@@ -1,9 +1,5 @@
 import { getToken } from "./token";
-
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.wtwrlarz.twilightparadox.com"
-    : "http://localhost:3001";
+import { BASE_URL } from "./auth";
 
 export function checkResponse(res) {
   if (!res.ok) {
@@ -21,7 +17,7 @@ async function request(url, options) {
 }
 
 function getItems() {
-  return request(`${baseUrl}/items`);
+  return request(`${BASE_URL}/items`);
 }
 
 function pushItems(name, weather, imageUrl) {
@@ -35,7 +31,7 @@ function pushItems(name, weather, imageUrl) {
 
   console.log("Request Payload:", payload);
 
-  return fetch(`${baseUrl}/items`, {
+  return fetch(`${BASE_URL}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +44,7 @@ function pushItems(name, weather, imageUrl) {
 const addCardLike = (id) => {
   const token = getToken();
 
-  return fetch(`${baseUrl}/items/${id}/likes`, {
+  return fetch(`${BASE_URL}/items/${id}/likes`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -60,7 +56,7 @@ const addCardLike = (id) => {
 const removeCardLike = (id) => {
   const token = getToken();
 
-  return fetch(`${baseUrl}/items/${id}/likes`, {
+  return fetch(`${BASE_URL}/items/${id}/likes`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -72,7 +68,7 @@ const removeCardLike = (id) => {
 function deleteItems(id) {
   const token = getToken();
 
-  return fetch(`${baseUrl}/items/${id}`, {
+  return fetch(`${BASE_URL}/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -87,7 +83,7 @@ const getUserInfo = async () => {
     return Promise.reject("No token found");
   }
 
-  const res = await fetch(`${baseUrl}/users/me`, {
+  const res = await fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -100,7 +96,7 @@ const getUserInfo = async () => {
 const editProfile = (data) => {
   const token = getToken();
 
-  return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${BASE_URL}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
