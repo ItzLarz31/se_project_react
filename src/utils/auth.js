@@ -2,10 +2,6 @@ const BASE_URL = "http://localhost:3001";
 
 import { checkResponse } from "./api";
 
-// const checkResponse = (res) => {
-//   return res.ok ? res.json() : Promise.reject(`Error ${res.status}`);
-// };
-
 export const register = async (email, password, name, avatar) => {
   const res = await fetch(`${BASE_URL}/signup`, {
     method: "POST",
